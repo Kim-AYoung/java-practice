@@ -3,6 +3,7 @@ package design_pattern.chain_of_responsibility_pattern;
 import design_pattern.chain_of_responsibility_pattern.filter.Filter;
 import design_pattern.chain_of_responsibility_pattern.response.AdminPageResponse;
 import design_pattern.chain_of_responsibility_pattern.response.MyPageResponse;
+import design_pattern.chain_of_responsibility_pattern.response.NotfoundPageResponse;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -27,6 +28,8 @@ public class FilterChain {
                 new MyPageResponse().doResponse(request);
             } else if (request.getPath().equals("/admin")) {
                 new AdminPageResponse().doResponse(request);
+            } else {
+                new NotfoundPageResponse().doResponse(request);
             }
         }
     }
